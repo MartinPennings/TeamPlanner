@@ -25,7 +25,7 @@ namespace DBLayer
             {
                 lst = dm.connection.Query<Department>(
                     @"SELECT ID, Name
-                      FROM Department ORDER BY Name
+                      FROM Department ORDER BY ID
                       ").ToList();
             }
             catch (Exception ex)

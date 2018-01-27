@@ -49,7 +49,10 @@ namespace ProjectPLanner
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
+            frmEditDepartment frm = new frmEditDepartment();
+            frm.department = null;
+            frm.ShowDialog();
+            loadGrid();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -58,6 +61,21 @@ namespace ProjectPLanner
             {
                 MessageBox.Show("Please select a department");
                 return;
+            }
+            else
+            {
+                Department department = new Department();
+                using (DBManager dm = new DBManager())
+                {
+                    int id = (int)dgvDepartments.SelectedRows[0].Cells[0].Value;
+
+                    department.Find(dm, id);
+                }
+
+                frmEditDepartment frm = new frmEditDepartment();
+                frm.department = department;
+                frm.ShowDialog();
+                loadGrid();
             }
 
             //dgvDepartments.SelectedRows[0].Cells[0].Value;
