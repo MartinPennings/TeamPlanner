@@ -1,0 +1,29 @@
+create table Person (	
+							ID integer primary key autoincrement,
+							FirstName varchar(100) not null,
+							LastName varchar(100) not null,
+							Department integer not null
+					);
+
+create table Department (	
+							ID integer primary key autoincrement,
+							Name varchar(100) not null
+						);
+
+create table Project	(
+							ID integer primary key autoincrement,
+							Name varchar(100) not null,
+							Description text not null,
+							StartDate date not null,
+							DueDate date not null,
+							EndDate date not null,
+							AssignedTo integer
+
+						);
+
+insert into Department (Name) Values ('Development');
+insert into Department (Name) Values ('System Administration');
+insert into Department (Name) Values ('Application Management');
+insert into Department (Name) Values ('General');
+
+insert into Person (FirstName,LastName,Department) Values ('Martin','Pennings',4);

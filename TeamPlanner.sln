@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPLanner", "ProjectPLanner\ProjectPLanner.csproj", "{3814BD75-7969-40C0-9E08-2D4F6ABC8CAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLayer", "DBLayer\DBLayer.csproj", "{DC7B0A00-4117-44AB-8C9D-9B5EE2D8ABB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3814BD75-7969-40C0-9E08-2D4F6ABC8CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3814BD75-7969-40C0-9E08-2D4F6ABC8CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3814BD75-7969-40C0-9E08-2D4F6ABC8CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3814BD75-7969-40C0-9E08-2D4F6ABC8CAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7B0A00-4117-44AB-8C9D-9B5EE2D8ABB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7B0A00-4117-44AB-8C9D-9B5EE2D8ABB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7B0A00-4117-44AB-8C9D-9B5EE2D8ABB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7B0A00-4117-44AB-8C9D-9B5EE2D8ABB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8345F6F8-F450-48CE-B5F6-0B3EE7DE3486}
+	EndGlobalSection
+EndGlobal
