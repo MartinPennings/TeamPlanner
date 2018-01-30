@@ -1,4 +1,4 @@
-﻿namespace ProjectPLanner
+﻿namespace TeamPLanner
 {
     partial class frmPerson
     {

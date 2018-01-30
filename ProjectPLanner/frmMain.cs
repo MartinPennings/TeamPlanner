@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectPLanner
+namespace TeamPLanner
 {
     public partial class frmMain : Form
     {
@@ -47,6 +47,11 @@ namespace ProjectPLanner
             {
                 MessageBox.Show(this, "A Departments window has already been opened.", "Information");
             }
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

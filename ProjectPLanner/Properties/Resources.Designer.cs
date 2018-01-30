@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectPLanner.Properties
+namespace TeamPLanner.Properties
 {
 
 
