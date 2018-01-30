@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using Dapper;
 using System.IO;
+using System.Collections.Specialized;
+using System.Configuration;
 
 namespace DBLayer
 {
@@ -14,17 +16,36 @@ namespace DBLayer
 
         public SQLiteConnection connection { get; set; }
 
-        private string DbFile = DBLayer.Properties.Resources.DBFullPath;
+        private string dbPath = string.Empty;
+        private string dbFile = string.Empty;
+        private string dbFullPath
+        {
+            get
+            {
+                return dbPath + "\\" + dbFile;
+            }
+        }
+
+        private void GetDBPathFromConfig()
+        {
+            if (string.IsNullOrEmpty(dbPath))
+            {
+                dbPath = ConfigurationManager.AppSettings.Get("DBPath");
+                dbFile = ConfigurationManager.AppSettings.Get("DBFile");
+            }
+        }
 
         public DBManager()
         {
-            CreateDatabaseIfNeeded(DbFile);
+            GetDBPathFromConfig();
+
+            CreateDatabaseIfNeeded();
             Open();
         }
 
         private void Open()
         {
-            connection = new SQLiteConnection("Data Source=" + DbFile);
+            connection = new SQLiteConnection("Data Source=" + dbFullPath);
             connection.Open();
         }
 
@@ -41,14 +62,20 @@ namespace DBLayer
         }
 
 
-        private void CreateDatabaseIfNeeded(string pDbFile)
+        private void CreateDatabaseIfNeeded()
         {
+
+            // TODO: Create Dir
+            if (!Directory.Exists(dbPath)){
+                Directory.CreateDirectory(dbPath);
+            }
+
 
             string sql = DBLayer.Properties.Resources.CreateDB_sql;
 
-            if (!File.Exists(pDbFile))
+            if (!File.Exists(dbFullPath))
             {
-                using (var con = new SQLiteConnection("Data Source=" + pDbFile))
+                using (var con = new SQLiteConnection("Data Source=" + dbFullPath))
                 {
                     con.Open();
                     con.Execute(sql);

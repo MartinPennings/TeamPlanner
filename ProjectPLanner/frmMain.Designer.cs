@@ -43,7 +43,7 @@
             this.actionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1575, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1575, 40);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -54,26 +54,26 @@
             this.projectsToolStripMenuItem,
             this.departmentsToolStripMenuItem});
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
-            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(105, 38);
+            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(105, 36);
             this.actionsToolStripMenuItem.Text = "Actions";
             // 
             // personsToolStripMenuItem
             // 
             this.personsToolStripMenuItem.Name = "personsToolStripMenuItem";
-            this.personsToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.personsToolStripMenuItem.Size = new System.Drawing.Size(252, 38);
             this.personsToolStripMenuItem.Text = "Persons";
             this.personsToolStripMenuItem.Click += new System.EventHandler(this.personsToolStripMenuItem_Click);
             // 
             // projectsToolStripMenuItem
             // 
             this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
-            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(252, 38);
             this.projectsToolStripMenuItem.Text = "Projects";
             // 
             // departmentsToolStripMenuItem
             // 
             this.departmentsToolStripMenuItem.Name = "departmentsToolStripMenuItem";
-            this.departmentsToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.departmentsToolStripMenuItem.Size = new System.Drawing.Size(252, 38);
             this.departmentsToolStripMenuItem.Text = "Departments";
             this.departmentsToolStripMenuItem.Click += new System.EventHandler(this.departmentsToolStripMenuItem_Click);
             // 
@@ -86,7 +86,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
-            this.Text = "Project Planner";
+            this.Text = "Team Planner";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

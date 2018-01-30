@@ -61,37 +61,28 @@ namespace DBLayer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to create table Persons (	
+        ///   Looks up a localized string similar to create table Person (	
         ///							ID integer primary key autoincrement,
         ///							FirstName varchar(100) not null,
         ///							LastName varchar(100) not null,
         ///							Department integer not null
         ///					);
         ///
-        ///create table Departments (	
+        ///create table Department (	
         ///							ID integer primary key autoincrement,
         ///							Name varchar(100) not null
         ///						);
         ///
-        ///create table Projects	(
+        ///create table Project	(
         ///							ID integer primary key autoincrement,
         ///							Name varchar(100) not null,
         ///							Description text not null,
         ///							StartDate date not null,
-        ///							DueDate d [rest of string was truncated]&quot;;.
+        ///							DueDate date [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CreateDB_sql {
             get {
                 return ResourceManager.GetString("CreateDB.sql", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to C:\dbFile\projectplan.sqlite.
-        /// </summary>
-        internal static string DBFullPath {
-            get {
-                return ResourceManager.GetString("DBFullPath", resourceCulture);
             }
         }
     }
