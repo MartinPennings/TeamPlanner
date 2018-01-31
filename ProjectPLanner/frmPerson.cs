@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBLayer;
 
-namespace TeamPLanner
+namespace TeamPlanner
 {
     public partial class frmPerson : Form
     {
@@ -22,21 +22,67 @@ namespace TeamPLanner
 
         private void frmPerson_Load(object sender, EventArgs e)
         {
-            List<Person> lst;
 
+            dgPersons.AutoGenerateColumns = false;
+            loadGrid();
+                    
+
+        }
+        private void loadGrid()
+        {
             using (DBManager dm = new DBManager())
             {
-                lst = Person.ListAll(dm);
+                dgPersons.DataSource = Person.ListAll(dm);
             }
-
-            dgPersons.DataSource = lst;
 
 
         }
-
         private void frmPerson_FormClosed(object sender, FormClosedEventArgs e)
         {
             InstanceCount -= 1;
+        }
+
+        private void dgPersons_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            frmEditPerson frm = new frmEditPerson();
+            frm.person = null;
+            frm.ShowDialog();
+            loadGrid();
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgPersons.SelectedRows[0] == null)
+            {
+                MessageBox.Show("Please select a person");
+                return;
+            }
+            else
+            {
+                Person person = new Person();
+                using (DBManager dm = new DBManager())
+                {
+                    int id = (int)dgPersons.SelectedRows[0].Cells[0].Value;
+
+                    person.Find(dm, id);
+                }
+
+                frmEditPerson frm = new frmEditPerson();
+                frm.person = person;
+                frm.ShowDialog();
+                loadGrid();
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBLayer;
 
-namespace TeamPLanner
+namespace TeamPlanner
 {
     public partial class frmEditDepartment : Form
     {

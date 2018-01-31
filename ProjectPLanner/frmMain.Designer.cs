@@ -1,4 +1,4 @@
-﻿namespace TeamPLanner
+﻿namespace TeamPlanner
 {
     partial class frmMain
     {

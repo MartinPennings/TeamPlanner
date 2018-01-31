@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TeamPLanner
+namespace TeamPlanner
 {
     public partial class frmMain : Form
     {
