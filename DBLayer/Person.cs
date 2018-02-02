@@ -128,5 +128,23 @@ namespace DBLayer
             return b;
         }
 
+
+        public bool Delete(DBManager dm)
+        {
+            bool b = true;
+            try
+            {
+                var result = dm.connection.Execute(
+                   @"Delete FROM  Person  WHERE ID=@ID;", this);
+                                
+            }
+            catch (Exception ex)
+            {
+                b = false;
+                LastError = ex.Message;
+            }
+
+            return b;
+        }
     }
 }

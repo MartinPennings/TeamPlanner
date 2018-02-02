@@ -99,7 +99,24 @@ namespace DBLayer
             return b;
         }
 
+        public bool Delete(DBManager dm)
+        {
+            bool b = true;
+            try
+            {
+                var result = dm.connection.Execute(
+                   @"Delete FROM  Department  WHERE ID=@ID;", this);
 
+                StaticList = null;
+            }
+            catch (Exception ex)
+            {
+                b = false;
+                LastError = ex.Message;
+            }
+
+            return b;
+        }
 
 
     }

@@ -88,6 +88,35 @@ namespace TeamPlanner
                 MessageBox.Show("Please select a department");
                 return;
             }
+            else
+            {
+                Department department = new Department();
+                using (DBManager dm = new DBManager())
+                {
+                    int id = (int)dgvDepartments.SelectedRows[0].Cells[0].Value;
+
+                    department.Find(dm, id);
+                }
+
+                if (MessageBox.Show("Are you sure? you want to delete department " + department.Name + "?", "Delete Department", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (DBManager dm = new DBManager())
+                    {
+
+                        if (!department.Delete(dm))
+                        {
+                            MessageBox.Show(Department.LastError);
+                        }
+                    }
+
+                    loadGrid();
+                }
+            }
+        }
+
+        private void dgvDepartments_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.btnEdit_Click(sender, e);
         }
     }
 }

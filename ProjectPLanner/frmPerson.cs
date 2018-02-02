@@ -84,5 +84,45 @@ namespace TeamPlanner
                 loadGrid();
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgPersons.SelectedRows[0] == null)
+            {
+                MessageBox.Show("Please select a person");
+                return;
+            }
+            else
+            {
+                Person person = new Person();
+
+                using (DBManager dm = new DBManager())
+                {
+                    int id = (int)dgPersons.SelectedRows[0].Cells[0].Value;
+
+                    person.Find(dm, id);
+                }
+
+                if (MessageBox.Show("Are you sure? you want to delete person " + person.LastName + "?", "Delete Person", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (DBManager dm = new DBManager())
+                    {
+
+                        if (!person.Delete(dm))
+                        {
+                            MessageBox.Show(Person.LastError);
+                        }
+                    }
+
+                    loadGrid();
+                }
+            }
+
+        }
+
+        private void dgPersons_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.btnEdit_Click(sender, e);
+        }
     }
 }
